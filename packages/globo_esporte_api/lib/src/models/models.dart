@@ -1,0 +1,12 @@
+export 'campeonato.dart';
+export 'classificacao.dart';
+export 'edicao.dart';
+export 'equipe.dart';
+export 'equipes.dart';
+export 'faixa_classificacao.dart';
+export 'fase.dart';
+export 'jogo.dart';
+export 'rodada.dart';
+export 'sede.dart';
+export 'tipo.dart';
+export 'transmissao.dart';
