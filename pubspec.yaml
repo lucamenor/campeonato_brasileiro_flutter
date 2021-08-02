@@ -11,6 +11,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  flutter_bloc: ^7.1.0
+  equatable: ^2.0.3
+  google_fonts: ^2.1.0
+  intl: ^0.17.0
+  percent_indicator: ^3.0.1
+  timeline_tile: ^2.0.0
+
+  globo_esporte_api:
+    path: packages/globo_esporte_api
 
 
   cupertino_icons: ^1.0.2
@@ -20,7 +32,6 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:

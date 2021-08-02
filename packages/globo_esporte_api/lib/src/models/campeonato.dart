@@ -34,13 +34,6 @@ class Campeonato {
 
   @override
   String toString() {
-    StringBuffer sb = StringBuffer();
-    sb.writeln(edicao.nome);
-    sb.writeln("--- Classificação ---");
-    classificacao.forEach((element) {
-      sb.writeln("${element.ordem} - ${element.nomePopular}");
-    });
-
-    return sb.toString();
+    return edicao.nome;
   }
 }
