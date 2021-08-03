@@ -1,4 +1,4 @@
-import 'package:campeonato_brasileiro_flutter/resumo/bloc/resumo_bloc.dart';
+import 'package:campeonato_brasileiro_flutter/resumo/cubit/resumo_cubit.dart';
 import 'package:campeonato_brasileiro_flutter/shared/fixed_width_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -75,7 +75,7 @@ class ClassificacaoCard extends StatelessWidget {
                     )),
                 child: Text("Mais detalhes"),
                 onPressed: () {
-                  context.read<ResumoBloc>().refresh();
+                  context.read<ResumoCubit>().refresh();
                 },
               ),
             ),

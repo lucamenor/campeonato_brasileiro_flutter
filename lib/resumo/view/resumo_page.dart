@@ -1,4 +1,4 @@
-import 'package:campeonato_brasileiro_flutter/resumo/bloc/resumo_bloc.dart';
+import 'package:campeonato_brasileiro_flutter/resumo/cubit/resumo_cubit.dart';
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/resumo_loaded_view.dart';
 import 'package:campeonato_brasileiro_flutter/shared/background.dart';
 import 'package:campeonato_brasileiro_flutter/shared/error_view.dart';
@@ -14,7 +14,7 @@ class ResumoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          ResumoBloc(context.read<GloboEsporteApiClient>())..refresh(),
+          ResumoCubit(context.read<GloboEsporteApiClient>())..refresh(),
       child: ResumoView(),
     );
   }
@@ -30,7 +30,7 @@ class ResumoView extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Background(),
-          BlocBuilder<ResumoBloc, ResumoState>(
+          BlocBuilder<ResumoCubit, ResumoState>(
             builder: (context, state) {
               if (state is ResumoInitial) {
                 return Progress();
@@ -56,6 +56,6 @@ class ResumoView extends StatelessWidget {
   }
 
   void _refresh(BuildContext context) {
-    context.read<ResumoBloc>().refresh();
+    context.read<ResumoCubit>().refresh();
   }
 }

@@ -1,4 +1,4 @@
-import 'package:campeonato_brasileiro_flutter/resumo/bloc/resumo_bloc.dart';
+import 'package:campeonato_brasileiro_flutter/resumo/cubit/resumo_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:globo_esporte_api/globo_esporte_api.dart';
@@ -28,7 +28,7 @@ class Header extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                context.read<ResumoBloc>().refresh();
+                context.read<ResumoCubit>().refresh();
               },
               icon: Icon(Icons.refresh),
               color: Colors.white,

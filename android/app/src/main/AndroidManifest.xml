@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.lucianomedeiros.campeonato_brasileiro_flutter">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="campeonato_brasileiro_flutter"
         android:icon="@mipmap/ic_launcher">
