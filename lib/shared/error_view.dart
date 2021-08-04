@@ -18,15 +18,18 @@ class ErrorView extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.all(32.0),
-            child: Text(msg, style: Theme.of(context).textTheme.headline5,),
+            child: Text(
+              msg,
+              style: Theme.of(context).textTheme.headline5,
+              textAlign: TextAlign.center,
+            ),
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              primary: Theme.of(context).primaryColorDark,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0),
-              )
-            ),
+                primary: Theme.of(context).primaryColorDark,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0),
+                )),
             child: Text("Tentar novamente"),
             onPressed: tryAgain,
           ),

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 
 String getDioErrorMessage(DioError error) {
@@ -10,7 +12,14 @@ String getDioErrorMessage(DioError error) {
       return "O serviço demorou demais a responder. Tente novamente";
     case DioErrorType.response:
       return dioError.message;
-    default:
-      return "Erro desconhecido";
+    case DioErrorType.other:
+      if (dioError.error is SocketException) {
+        return "Você possui uma conexão de internet ativa? Verifique e tente novamente";
+      }
+      break;
+    case DioErrorType.cancel:
+      return "Por algum motivo a conexão com os dados foi cancelada durante a busca. Favor tentar novamente";
   }
+
+  return "Erro desconhecido";
 }

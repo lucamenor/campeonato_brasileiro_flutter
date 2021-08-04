@@ -17,7 +17,7 @@ class Header extends StatelessWidget {
           children: [
             Text("⚽", style: TextStyle(fontSize: 48.0)),
             SizedBox(width: 16.0),
-            Flexible(
+            Expanded(
               child: Text(
                 edicao.nome,
                 style: Theme.of(context).textTheme.headline4?.copyWith(

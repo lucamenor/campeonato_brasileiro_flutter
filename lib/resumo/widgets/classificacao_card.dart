@@ -1,4 +1,5 @@
 import 'package:campeonato_brasileiro_flutter/resumo/cubit/resumo_cubit.dart';
+import 'package:campeonato_brasileiro_flutter/shared/custom_card.dart';
 import 'package:campeonato_brasileiro_flutter/shared/fixed_width_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,75 +14,36 @@ class ClassificacaoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+    return CustomCard(
+      header: Text(
+        'Classificação',
+        style: Theme.of(context).textTheme.headline6,
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Classificação',
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            SizedBox(height: 16.0),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Equipe',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
-                FixedWidthText(
-                  width: 24,
-                  text: 'P',
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Equipe',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                FixedWidthText(
-                  width: 24,
-                  text: 'J',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                FixedWidthText(
-                  width: 24,
-                  text: 'V',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                FixedWidthText(
-                  width: 24,
-                  text: 'E',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                FixedWidthText(
-                  width: 24,
-                  text: 'D',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(width: 8.0),
-              ],
-            ),
-            ..._buildTimes(context),
-            const SizedBox(height: 8.0),
-            SizedBox(
-              width: double.maxFinite,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Theme.of(context).primaryColorDark,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    )),
-                child: Text("Mais detalhes"),
-                onPressed: () {
-                  context.read<ResumoCubit>().refresh();
-                },
               ),
-            ),
-          ],
-        ),
+              ...['P', 'J', 'V', 'E', 'D'].map((e) => FixedWidthText(
+                    width: 24,
+                    text: e,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  )),
+              const SizedBox(width: 8.0),
+            ],
+          ),
+          ..._buildTimes(context),
+        ],
       ),
+      textButton: 'Mais detalhes',
+      buttonCallback: () {
+        context.read<ResumoCubit>().refresh();
+      },
     );
   }
 
