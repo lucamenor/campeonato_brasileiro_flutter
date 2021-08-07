@@ -50,10 +50,7 @@ class ClassificacaoCard extends StatelessWidget {
   List<Widget> _buildTimes(BuildContext context) {
     return classificacoes
         .take(5)
-        .map((classificacao) => ClassificacaoRow(
-              classificacao,
-              isLast: classificacao.ordem == 5,
-            ))
+        .map((classificacao) => ClassificacaoRow(classificacao))
         .toList();
   }
 }

@@ -8,7 +8,7 @@ part 'jogo.g.dart';
 @JsonSerializable()
 class Jogo {
   final int id;
-  final String? dataRealizacao; //Padrão: 2021-09-11T17:00
+  final DateTime? dataRealizacao; //Padrão: 2021-09-11T17:00
   final String? horaRealizacao; //Padrão: 17:00
   final int? placarOficialVisitante;
   final int? placarOficialMandante;

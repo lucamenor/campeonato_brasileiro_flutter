@@ -9,7 +9,9 @@ part of 'jogo.dart';
 Jogo _$JogoFromJson(Map<String, dynamic> json) {
   return Jogo(
     id: json['id'] as int,
-    dataRealizacao: json['data_realizacao'] as String?,
+    dataRealizacao: json['data_realizacao'] == null
+        ? null
+        : DateTime.parse(json['data_realizacao'] as String),
     horaRealizacao: json['hora_realizacao'] as String?,
     placarOficialVisitante: json['placar_oficial_visitante'] as int?,
     placarOficialMandante: json['placar_oficial_mandante'] as int?,
