@@ -8,6 +8,8 @@ class PositionIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textColor = color != null && color!.computeLuminance() > 0.7 ? Colors.black : Colors.white;
+
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -18,7 +20,7 @@ class PositionIndicator extends StatelessWidget {
           position.toString(),
           style: TextStyle(
             fontSize: 11,
-            color: Colors.white,
+            color: textColor,
             fontWeight: FontWeight.bold,
           ),
         ),

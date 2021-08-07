@@ -1,13 +1,11 @@
 import 'package:bloc/bloc.dart';
+import 'package:campeonato_brasileiro_flutter/util/constants.dart';
 import 'package:campeonato_brasileiro_flutter/util/dio_error_handler.dart';
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:globo_esporte_api/globo_esporte_api.dart';
 
 part 'resumo_state.dart';
-
-const idCampeonato = "d1a37fa4-e948-43a6-ba53-ab24ab3a45b1";
-const fase = "fase-unica-campeonato-brasileiro-2021";
 
 class ResumoCubit extends Cubit<ResumoState> {
   final GloboEsporteApiClient _apiClient;

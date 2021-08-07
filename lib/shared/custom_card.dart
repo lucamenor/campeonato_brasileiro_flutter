@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
-  final Widget header;
+  final Widget? header;
   final Widget body;
   final String? textButton;
   final VoidCallback? buttonCallback;
 
   const CustomCard({
     Key? key,
-    required this.header,
+    this.header,
     required this.body,
     this.textButton,
     this.buttonCallback,
@@ -25,8 +25,11 @@ class CustomCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            header,
-            SizedBox(height: 16.0),
+            if (header != null)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 16.0),
+                child: header,
+              ),
             body,
             if (textButton != null)
               Padding(

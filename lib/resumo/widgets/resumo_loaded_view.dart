@@ -1,3 +1,4 @@
+import 'package:campeonato_brasileiro_flutter/classificacao/classificacao.dart';
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/classificacao_card.dart';
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/jogos_card.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,17 @@ class ResumoLoadedView extends StatelessWidget {
           children: [
             Header(campeonato.edicao),
             SizedBox(height: 16.0),
-            ClassificacaoCard(campeonato.classificacao),
+            ClassificacaoCard(
+              classificacoes: campeonato.classificacao,
+              onClickMaisDetalhes: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ClassificacaoPage(fase: campeonato.fase.slug),
+                  ),
+                );
+              },
+            ),
             SizedBox(height: 8.0),
             JogosCard(
               jogos: campeonato.listaJogos,

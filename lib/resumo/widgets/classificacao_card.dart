@@ -1,16 +1,19 @@
-import 'package:campeonato_brasileiro_flutter/resumo/cubit/resumo_cubit.dart';
 import 'package:campeonato_brasileiro_flutter/shared/custom_card.dart';
 import 'package:campeonato_brasileiro_flutter/shared/fixed_width_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:globo_esporte_api/globo_esporte_api.dart';
 
 import 'classificacao_row.dart';
 
 class ClassificacaoCard extends StatelessWidget {
   final List<Classificacao> classificacoes;
+  final VoidCallback onClickMaisDetalhes;
 
-  const ClassificacaoCard(this.classificacoes, {Key? key}) : super(key: key);
+  const ClassificacaoCard({
+    Key? key,
+    required this.classificacoes,
+    required this.onClickMaisDetalhes,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,16 +44,11 @@ class ClassificacaoCard extends StatelessWidget {
         ],
       ),
       textButton: 'Mais detalhes',
-      buttonCallback: () {
-        context.read<ResumoCubit>().refresh();
-      },
+      buttonCallback: onClickMaisDetalhes,
     );
   }
 
   List<Widget> _buildTimes(BuildContext context) {
-    return classificacoes
-        .take(5)
-        .map((classificacao) => ClassificacaoRow(classificacao))
-        .toList();
+    return classificacoes.take(5).map((classificacao) => ClassificacaoRow(classificacao)).toList();
   }
 }

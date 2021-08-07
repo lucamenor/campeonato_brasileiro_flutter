@@ -13,7 +13,7 @@ class ClassificacaoRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = classificacao.faixaClassificacaoCor?.toColor() ?? Colors.white;
+    final color = classificacao.faixaClassificacaoCor?.toColor() ?? Colors.black;
     return TimelineTile(
       isFirst: classificacao.ordem == 1,
       isLast: isLast ?? false,
@@ -40,7 +40,7 @@ class ClassificacaoRow extends StatelessWidget {
         color: color,
         indicator: PositionIndicator(
           position: classificacao.ordem,
-          color: classificacao.faixaClassificacaoCor?.toColor(),
+          color: color,
         ),
       ),
     );
