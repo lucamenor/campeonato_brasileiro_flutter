@@ -28,8 +28,8 @@ class AppView extends StatelessWidget {
 
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: Color(0xFF09af00),
-        primaryColorDark: Color(0xFF007d2f),
+        primaryColor: Color(0xFF48A43F),
+        primaryColorDark: Color(0xFF157422),
         accentColor: Color(0xFFe9e918),
         textTheme: GoogleFonts.montserratTextTheme(textTheme),
       ),

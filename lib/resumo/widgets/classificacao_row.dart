@@ -33,6 +33,7 @@ class ClassificacaoRow extends StatelessWidget {
             FixedWidthText(width: 24, text: classificacao.vitorias.toString()),
             FixedWidthText(width: 24, text: classificacao.empates.toString()),
             FixedWidthText(width: 24, text: classificacao.derrotas.toString()),
+            FixedWidthText(width: 24, text: classificacao.saldoGols.toString()),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
+import 'package:campeonato_brasileiro_flutter/util/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:globo_esporte_api/globo_esporte_api.dart';
 import 'package:intl/intl.dart';
-import 'package:campeonato_brasileiro_flutter/util/context_extension.dart';
 
 class JogoView extends StatelessWidget {
   final Jogo jogo;
@@ -37,19 +37,26 @@ class JogoView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
-                  child: Text(
-                    jogo.equipes.mandante.nomePopular,
-                    textAlign: TextAlign.end,
-                  )),
+                child: Text(
+                  jogo.equipes.mandante.nomePopular,
+                  textAlign: TextAlign.end,
+                ),
+              ),
               Text(
-                ' ${jogo.placarOficialMandante ?? ''} x ${jogo.placarOficialVisitante ?? ''} ',
-                style: Theme.of(context).textTheme.headline5,
+                ' ${jogo.placarOficialMandante ?? ''}',
+                style: Theme.of(context).textTheme.headline6,
+              ),
+              Text(' x '),
+              Text(
+                '${jogo.placarOficialVisitante ?? ''} ',
+                style: Theme.of(context).textTheme.headline6,
               ),
               Expanded(
-                  child: Text(
-                    jogo.equipes.visitante.nomePopular,
-                    textAlign: TextAlign.start,
-                  )),
+                child: Text(
+                  jogo.equipes.visitante.nomePopular,
+                  textAlign: TextAlign.start,
+                ),
+              ),
             ],
           ),
           if (jogo.transmissao?.label != null)

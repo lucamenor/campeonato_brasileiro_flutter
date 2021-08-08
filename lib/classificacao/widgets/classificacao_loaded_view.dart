@@ -1,6 +1,6 @@
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/classificacao_row.dart';
 import 'package:campeonato_brasileiro_flutter/shared/custom_card.dart';
-import 'package:campeonato_brasileiro_flutter/shared/fixed_width_text.dart';
+import 'package:campeonato_brasileiro_flutter/shared/table_header.dart';
 import 'package:flutter/material.dart';
 import 'package:globo_esporte_api/globo_esporte_api.dart';
 
@@ -23,21 +23,9 @@ class ClassificacaoLoadedView extends StatelessWidget {
           child: CustomCard(
             body: Column(
               children: [
-                Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'Equipe',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    ...['P', 'J', 'V', 'E', 'D'].map((e) => FixedWidthText(
-                          width: 24,
-                          text: e,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        )),
-                    const SizedBox(width: 8.0),
-                  ],
+                TableHeader(
+                  title: 'Equipe',
+                  columns: ['P', 'J', 'V', 'E', 'D', 'SG'],
                 ),
                 ..._buildTimes(context),
               ],
