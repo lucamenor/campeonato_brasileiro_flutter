@@ -6,8 +6,14 @@ import 'package:globo_esporte_api/globo_esporte_api.dart';
 class JogosCard extends StatelessWidget {
   final List<Jogo> jogos;
   final Rodada rodada;
+  final VoidCallback onClickOutrasRodadas;
 
-  const JogosCard({Key? key, required this.jogos, required this.rodada}) : super(key: key);
+  const JogosCard({
+    Key? key,
+    required this.jogos,
+    required this.rodada,
+    required this.onClickOutrasRodadas,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,7 @@ class JogosCard extends StatelessWidget {
         ),
       ),
       textButton: 'Outras rodadas',
-      buttonCallback: () {},
+      buttonCallback: onClickOutrasRodadas,
     );
   }
 }

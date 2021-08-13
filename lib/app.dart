@@ -27,11 +27,12 @@ class AppView extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return MaterialApp(
-      theme: ThemeData(
+      theme: ThemeData.light().copyWith(
         primaryColor: Color(0xFF48A43F),
         primaryColorDark: Color(0xFF157422),
         accentColor: Color(0xFFe9e918),
         textTheme: GoogleFonts.montserratTextTheme(textTheme),
+        brightness: Brightness.dark,
       ),
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: [const Locale('pt', 'BR')],

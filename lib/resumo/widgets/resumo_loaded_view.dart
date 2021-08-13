@@ -1,6 +1,7 @@
 import 'package:campeonato_brasileiro_flutter/classificacao/classificacao.dart';
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/classificacao_card.dart';
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/jogos_card.dart';
+import 'package:campeonato_brasileiro_flutter/rodadas/rodadas.dart';
 import 'package:flutter/material.dart';
 import 'package:globo_esporte_api/globo_esporte_api.dart';
 
@@ -35,6 +36,17 @@ class ResumoLoadedView extends StatelessWidget {
             JogosCard(
               jogos: campeonato.listaJogos,
               rodada: campeonato.rodada,
+              onClickOutrasRodadas: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RodadasPage(
+                      fase: campeonato.fase.slug,
+                      rodada: campeonato.rodada,
+                    ),
+                  ),
+                );
+              },
             ),
           ],
         ),
