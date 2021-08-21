@@ -11,8 +11,8 @@
     </queries>
 
    <application
-        android:label="campeonato_brasileiro_flutter"
-        android:icon="@mipmap/ic_launcher">
+        android:label="Campeonato Brasileiro 2021"
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
