@@ -1,16 +1,13 @@
 # campeonato_brasileiro_flutter
 
-App sobre o campeonato brasileiro de futebol
+App sobre o campeonato brasileiro 2021
 
-## Getting Started
+### Prints
 
-This project is a starting point for a Flutter application.
+![Tela inicial](https://github.com/lucamenor/campeonato_brasileiro_flutter/raw/master/prtins/Screenshot_20210821-171913.jpg "Tela inicial")
 
-A few resources to get you started if this is your first Flutter project:
+![Tela com a classificação](https://github.com/lucamenor/campeonato_brasileiro_flutter/raw/master/prtins/Screenshot_20210821-171919.jpg "Tela com a classificação")
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+![Tela de rodadas](https://github.com/lucamenor/campeonato_brasileiro_flutter/raw/master/prtins/Screenshot_20210821-171939.jpg "Tela de rodadas")
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ícone da aplicação feito por [Freepik](https://www.freepik.com) e obtido em [Flaticon](https://www.flaticon.com/)
