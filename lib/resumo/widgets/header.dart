@@ -15,7 +15,11 @@ class Header extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text("⚽", style: TextStyle(fontSize: 48.0)),
+            Image(
+              image: AssetImage('assets/icon/icon.png'),
+              width: 48,
+              height: 48,
+            ),
             SizedBox(width: 16.0),
             Expanded(
               child: Text(

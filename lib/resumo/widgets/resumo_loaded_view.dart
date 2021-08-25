@@ -1,9 +1,13 @@
+import 'package:app_review/app_review.dart';
 import 'package:campeonato_brasileiro_flutter/classificacao/classificacao.dart';
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/classificacao_card.dart';
 import 'package:campeonato_brasileiro_flutter/resumo/widgets/jogos_card.dart';
 import 'package:campeonato_brasileiro_flutter/rodadas/rodadas.dart';
+import 'package:campeonato_brasileiro_flutter/shared/custom_icon_button.dart';
+import 'package:campeonato_brasileiro_flutter/util/context_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:globo_esporte_api/globo_esporte_api.dart';
+import 'package:share_plus/share_plus.dart';
 
 import 'header.dart';
 
@@ -47,6 +51,40 @@ class ResumoLoadedView extends StatelessWidget {
                   ),
                 );
               },
+            ),
+            SizedBox(height: 8.0),
+            Wrap(
+              spacing: 8.0,
+              runSpacing: 4.0,
+              alignment: WrapAlignment.center,
+              children: [
+                CustomIconButton(
+                  icon: Icons.rate_review,
+                  label: 'Avaliar',
+                  onPressed: () async {
+                    if (await AppReview.isRequestReviewAvailable) {
+                      AppReview.requestReview.then((value) => print(value));
+                    } else {
+                      AppReview.writeReview.then((value) => print(value));
+                    }
+                  },
+                ),
+                CustomIconButton(
+                  icon: Icons.share,
+                  label: 'Compartilhar',
+                  onPressed: () {
+                    Share.share('Olha que legal este aplicativo sobre o Campeonato Brasileiro 2021. '
+                        'Link: https://play.google.com/store/apps/details?id=br.com.lucianomedeiros.campeonato_brasileiro_flutter');
+                  },
+                ),
+                CustomIconButton(
+                  icon: Icons.code,
+                  label: 'Código fonte',
+                  onPressed: () {
+                    context.openUrl('https://github.com/lucamenor/campeonato_brasileiro_flutter');
+                  },
+                ),
+              ],
             ),
           ],
         ),
