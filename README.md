@@ -2,6 +2,8 @@
 
 App sobre o campeonato brasileiro 2021
 
+[![Codemagic build status](https://api.codemagic.io/apps/61216556ced140ae8df86181/61216556ced140ae8df86180/status_badge.svg)](https://codemagic.io/apps/61216556ced140ae8df86181/61216556ced140ae8df86180/latest_build)
+
 ### Prints
 
 ![Tela inicial](prints/Screenshot_20210821-171913.jpg?raw=true "Tela inicial")
