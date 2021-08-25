@@ -1,0 +1,3 @@
+- Alterado ícone da tela inicial
+- Remoção de código desnecessário
+- Novos botões para avaliar, compartilhar e ver código fonte
